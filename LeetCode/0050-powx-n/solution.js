@@ -8,10 +8,10 @@ var myPow = function(x, n) {
     let result = 1;
 
     while (n > 0) {
-        if (n % 2 === 1) {   // if n is odd
+        if (n % 2 === 1) {
             result *= x;
         }
-        x *= x;             // square the base
+        x *= x;    
         n = Math.floor(n / 2);
     }
 
