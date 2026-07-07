@@ -5,7 +5,7 @@ on:
 
   schedule:
     # Every day at 12:00 AM UTC
-    - cron: "029 18 * * *"
+    - cron: "29 18 * * *"
 
 jobs:
   sync:
