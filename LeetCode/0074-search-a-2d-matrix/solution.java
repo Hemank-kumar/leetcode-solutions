@@ -1,24 +1,17 @@
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
-        int len = matrix.length;
-        for(int i = 0;i<len;i++){
-            int left = 0;
-            int right = matrix[i].length-1;
-            if((target < matrix[i][left]) || (target > matrix[i][right])){
-                continue;
-            }
-            while(left <= right){
-                int mid = left + (right - left)/2;
-                if(matrix[i][mid] == target){
+        // Iterate through every row
+        for (int r = 0; r < matrix.length; r++) {
+            // Iterate through every column in the current row
+            for (int c = 0; c < matrix[0].length; c++) {
+                // If we find the target, return true immediately
+                if (matrix[r][c] == target) {
                     return true;
-                }
-                if(target < matrix[i][mid]){
-                    right = mid - 1;
-                }else{
-                    left = mid + 1;
                 }
             }
         }
+        
+        // If we finish looping without finding it, return false
         return false;
     }
 }
