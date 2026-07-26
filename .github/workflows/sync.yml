@@ -17,7 +17,7 @@ jobs:
     name: Sync Accepted Solutions
     runs-on: ubuntu-latest
 
-    steps:
+    steps:  
       - name: Sync LeetCode to GitHub
         uses: joshcai/leetcode-sync@v1.7
         with:
