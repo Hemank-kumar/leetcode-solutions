@@ -6,7 +6,7 @@ on:
   # while being shedule trigger of it will be triggerd manually and can't be triggered automatically
 
   # turn the schedule trigger on when the leetsync api problem resolve 
-  # we have to make new workflow of mine 
+  # we have to make new workflow of mine  
 
   # schedule:
   #   # Every day at 12:00 AM UTC
