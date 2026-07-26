@@ -10,7 +10,7 @@ on:
 
   # schedule:
   #   # Every day at 12:00 AM UTC
-  #   - cron: "30 16 * * *"
+  #   - cron: "30 16 * * *"  
   
 jobs:
   sync:
