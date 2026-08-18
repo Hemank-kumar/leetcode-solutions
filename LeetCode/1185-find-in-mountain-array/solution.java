@@ -1,56 +1,56 @@
 /**
  * // This is MountainArray's API interface.
- * // You should not implement it, or speculate about its implementation
- * interface MountainArray {
- *     public int get(int index) {}
- *     public int length() {}
- * }
- */
- 
-class Solution {
-    public int findInMountainArray(int target, MountainArray mountainArr) {
-        int length = mountainArr.length();
-        int left = 0,right = length - 1;
-        while(left < right){
-            int mid = left + (right - left)/2;
-            if(mountainArr.get(mid) < mountainArr.get(mid+1)){
-                left = mid + 1;
-            }else{
-                right = mid;
-            }
-        }
-        int peak = left;
+  * // You should not implement it, or speculate about its implementation
+   * interface MountainArray {
+    *     public int get(int index) {}
+     *     public int length() {}
+      * }
+       */
+        
+        class Solution {
+            public int findInMountainArray(int target, MountainArray mountainArr) {
+                    int length = mountainArr.length();
+                            int left = 0,right = length - 1;
+                                    while(left < right){
+                                                int mid = left + (right - left)/2;
+                                                            if(mountainArr.get(mid) < mountainArr.get(mid+1)){
+                                                                            left = mid + 1;
+                                                                                        }else{
+                                                                                                        right = mid;
+                                                                                                                    }
+                                                                                                                            }
+                                                                                                                                    int peak = left;
 
-        int res = binarySearch(target, mountainArr, 0, peak, true);
-        if(res != -1){
-            return res;
-        }
-        return binarySearch(target,mountainArr, peak+1, length - 1, false);
+                                                                                                                                            int res = binarySearch(target, mountainArr, 0, peak, true);
+                                                                                                                                                    if(res != -1){
+                                                                                                                                                                return res;
+                                                                                                                                                                        }
+                                                                                                                                                                                return binarySearch(target,mountainArr, peak+1, length - 1, false);
 
-    }
+                                                                                                                                                                                    }
 
-    public static int binarySearch(int target,  MountainArray mountainArr, int left, int right, boolean isAscending){
-        while(left <= right){
-            int mid = left + (right - left)/2;
-            int midVal = mountainArr.get(mid);
+                                                                                                                                                                                        public static int binarySearch(int target,  MountainArray mountainArr, int left, int right, boolean isAscending){
+                                                                                                                                                                                                while(left <= right){
+                                                                                                                                                                                                            int mid = left + (right - left)/2;
+                                                                                                                                                                                                                        int midVal = mountainArr.get(mid);
 
-            if(midVal == target){
-                return mid;
-            }
-            if(isAscending){
-                if(midVal > target){
-                    right = mid - 1;
-                }else{
-                    left = mid + 1;
-                }
-            }else{
-                if(midVal > target){
-                    left = mid + 1;
-                }else{
-                    right = mid - 1;
-                }
-            }
-        }
-        return -1;
-    }
-}
+                                                                                                                                                                                                                                    if(midVal == target){
+                                                                                                                                                                                                                                                    return mid;
+                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                            if(isAscending){
+                                                                                                                                                                                                                                                                                            if(midVal > target){
+                                                                                                                                                                                                                                                                                                                right = mid - 1;
+                                                                                                                                                                                                                                                                                                                                }else{
+                                                                                                                                                                                                                                                                                                                                                    left = mid + 1;
+                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                }else{
+                                                                                                                                                                                                                                                                                                                                                                                                if(midVal > target){
+                                                                                                                                                                                                                                                                                                                                                                                                                    left = mid + 1;
+                                                                                                                                                                                                                                                                                                                                                                                                                                    }else{
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        right = mid - 1;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    return -1;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
